@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Front</title>
     <link rel="stylesheet" href="tailwind.css">
-    <script> 
-            //const API_URL = "https://back-end-bsale-lg4ld0t4s-valentinallende.vercel.app";
-            const search = () => {
-
-            //INPUT SEARCH BAR
-            const input = document.getElementById("search-navbar");
-            console.log(input);
-            input.addEventListener("input", (e) => {
-                const value = e.target.value;
-            })
-        };
-    </script>
-    <script src="./script.js"></script>
+    <!-- <script> 
+        //     const search = () => {
+        //     //INPUT SEARCH BAR
+        //     const input = document.getElementById("search-navbar");
+            
+        //     input.addEventListener("input", (e) => {
+        //         const value = e.target.value;
+        //         console.log('input: ' + value);
+        //     })
+        // };
+    </script> -->
+    <script src="./script.js" defer></script>
 </head>
 
 <body>
@@ -53,7 +52,7 @@
                         </svg>
                         <span class="sr-only">Search icon</span>
                     </div>
-                    <input onKeyup='search()' type="text" id="search-navbar"
+                    <input  type="text" id="search-navbar" data-search
                         class="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="Search...">
                 </div>
@@ -103,104 +102,38 @@
         </div>
     </nav>
     <!-- Cards -->
-    <script src="Data.js">
-        const data = [
-  {
-    id: 5,
-    name: "ENERGETICA MR BIG",
-    url_image:
-      "https://dojiw2m9tvv09.cloudfront.net/11132/product/misterbig3308256.jpg",
-    price: 1490,
-    discount: 20,
-    category: 1,
-  },
-  {
-    id: 6,
-    name: "ENERGETICA RED BULL",
-    url_image:
-      "https://dojiw2m9tvv09.cloudfront.net/11132/product/redbull8381.jpg",
-    price: 1490,
-    discount: 0,
-    category: 1,
-  },
-  {
-    id: 7,
-    name: "ENERGETICA SCORE",
-    url_image:
-      "https://dojiw2m9tvv09.cloudfront.net/11132/product/logo7698.png",
-    price: 1290,
-    discount: 0,
-    category: 1,
-  },
-  {
-    id: 8,
-    name: "PISCO ALTO DEL CARMEN 35º",
-    url_image:
-      "https://dojiw2m9tvv09.cloudfront.net/11132/product/alto8532.jpg",
-    price: 7990,
-    discount: 10,
-    category: 2,
-  },
-  {
-    id: 9,
-    name: "PISCO ALTO DEL CARMEN 40º ",
-    url_image:
-      "https://dojiw2m9tvv09.cloudfront.net/11132/product/alto408581.jpg",
-    price: 5990,
-    discount: 0,
-    category: 2,
-  },
-  {
-    id: 10,
-    name: "PISCO ARTESANOS 35º ",
-    url_image:
-      "https://dojiw2m9tvv09.cloudfront.net/11132/product/artesanos8818.jpg",
-    price: 3990,
-    discount: 0,
-    category: 2,
-  },
-  {
-    id: 11,
-    name: "PISCO BAUZA 40º ",
-    url_image:
-      "https://dojiw2m9tvv09.cloudfront.net/11132/product/bauza408831.jpg",
-    price: 4990,
-    discount: 0,
-    category: 2,
-  },
-];
-
-        data.map(p => {
-            `<div class="w-1/4 max-w-xl bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 pb-2	max-h-xl my-1">
+    <div data-cards-container id="card-container">
+            <template data-user-template>
+            <div class="w-1/4 max-w-xl bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 pb-2	max-h-xl my-1">
         <a href="#">
-            <div class='box-content'>
+            <div class='box-content' data-image >
                 <img class="p-8 rounded-t-lg max-h-xs max-w-xs" src=${ p.url_image } alt="no stock">
             </div>
         </a>
         <div class="px-3 pb-3">
             <a href="#">
-                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">${
+                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white" data-name>${
                     p.name
                     }</h5>
             </a>
             <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">${
                 p.category
                 }</h5>
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center" data-price>
                 <span class="text-3xl font-bold text-gray-900 dark:text-white">${
                     p.price
                     }</span>
-                <span class="text-3xl font-bold text-lime-400	 dark:text-lime-400	">${
-                    p.discount == 0 ? "" : "-" + p.discount + "%"
+                <span class="text-3xl font-bold text-lime-400	 dark:text-lime-400	" data-discount>${
+                    p.discount
                     }</span>
                 <a href="#"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
                     to cart</a>
             </div>
         </div>
-    </div>`
-        })
-    </script>
+    </div>
+</template>
+</div>
 </body>
 
 </html>
