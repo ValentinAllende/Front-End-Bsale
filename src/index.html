@@ -26,9 +26,9 @@
 
     <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
-            <a href="https://flowbite.com/" class="flex items-center">
+            <a href="" class="flex items-center">
                 <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo">
-                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Bsale</span>
             </a>
             <div class="flex md:order-2">
                 <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
@@ -68,6 +68,7 @@
                     </svg>
                 </button>
             </div>
+           
             <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="navbar-search">
                 <div class="relative mt-3 md:hidden">
                     <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
@@ -97,7 +98,16 @@
                         <a href="#"
                             class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
                     </li>
-                </ul>
+                </ul> <select id="select" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected>Elige una Categoria</option>
+                <option value="1">bebida energetica</option>
+                <option value="2">pisco</option>
+                <option value="3">ron</option>
+                <option value="4">bebida</option>
+                <option value="5">snack</option>
+                <option value="6">cerveza</option>
+                <option value="7">vodka</option>
+            </select>
             </div>
         </div>
     </nav>
@@ -106,26 +116,21 @@
             <template data-user-template>
             <div class="w-1/4 max-w-xl bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 pb-2	max-h-xl my-1">
         <a href="#">
-            <div class='box-content' data-image >
-                <img class="p-8 rounded-t-lg max-h-xs max-w-xs" src=${ p.url_image } alt="no stock">
+            <div class='box-content'>
+                <img class="p-8 rounded-t-lg max-h-xs max-w-xs" data-image  id='img' src="" alt="no stock">
             </div>
         </a>
         <div class="px-3 pb-3">
             <a href="#">
-                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white" data-name>${
-                    p.name
-                    }</h5>
+                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white" data-name></h5>
             </a>
-            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">${
-                p.category
-                }</h5>
-            <div class="flex justify-between items-center" data-price>
-                <span class="text-3xl font-bold text-gray-900 dark:text-white">${
-                    p.price
-                    }</span>
-                <span class="text-3xl font-bold text-lime-400	 dark:text-lime-400	" data-discount>${
-                    p.discount
-                    }</span>
+            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                En Stock</h5>
+            <div class="flex justify-between items-center" >
+                <span class="text-3xl font-bold text-gray-900 dark:text-white" data-price>
+                    
+                    </span>
+                <span class="text-3xl font-bold text-lime-400	 dark:text-lime-400	" data-discount>desc</span>
                 <a href="#"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
                     to cart</a>
