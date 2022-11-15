@@ -3,6 +3,7 @@ const useCardTemplate = document.querySelector("[data-user-template]");
 const userCardContainer = document.querySelector("[data-cards-container]");
 const searchInput = document.querySelector("[data-search]");
 const selectOption = document.getElementById("select");
+
 //filtrado por Categoria
 //https://back-end-bsal.herokuapp.com/products/category/1
 selectOption.addEventListener("change", (e) => {
